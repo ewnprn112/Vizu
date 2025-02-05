@@ -1,4 +1,4 @@
-namespace Vizu
+namespace Vizu.Source
 {
     internal static class Program
     {
