@@ -30,14 +30,14 @@
         {
             TableLayoutPanel_MainLayout = new TableLayoutPanel();
             TableLayoutPanel_Channels = new TableLayoutPanel();
-            Label_Channel_4_Value = new Label();
+            TextBox_Channel_4_Value = new TextBox();
+            TextBox_Channel_3_Value = new TextBox();
+            TextBox_Channel_2_Value = new TextBox();
             TrackBar_Channel_4 = new TrackBar();
             TrackBar_Channel_3 = new TrackBar();
             TrackBar_Channel_2 = new TrackBar();
             TrackBar_Channel_1 = new TrackBar();
-            Label_Channel_1_Value = new Label();
-            Label_Channel_2_Value = new Label();
-            Label_Channel_3_Value = new Label();
+            TextBox_Channel_1_Value = new TextBox();
             Panel_ColorVisualization = new Panel();
             TableLayoutPanel_MainLayout.SuspendLayout();
             TableLayoutPanel_Channels.SuspendLayout();
@@ -70,14 +70,14 @@
             TableLayoutPanel_Channels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             TableLayoutPanel_Channels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             TableLayoutPanel_Channels.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            TableLayoutPanel_Channels.Controls.Add(Label_Channel_4_Value, 3, 1);
+            TableLayoutPanel_Channels.Controls.Add(TextBox_Channel_4_Value, 3, 1);
+            TableLayoutPanel_Channels.Controls.Add(TextBox_Channel_3_Value, 2, 1);
+            TableLayoutPanel_Channels.Controls.Add(TextBox_Channel_2_Value, 1, 1);
             TableLayoutPanel_Channels.Controls.Add(TrackBar_Channel_4, 3, 0);
             TableLayoutPanel_Channels.Controls.Add(TrackBar_Channel_3, 2, 0);
             TableLayoutPanel_Channels.Controls.Add(TrackBar_Channel_2, 1, 0);
             TableLayoutPanel_Channels.Controls.Add(TrackBar_Channel_1, 0, 0);
-            TableLayoutPanel_Channels.Controls.Add(Label_Channel_1_Value, 0, 1);
-            TableLayoutPanel_Channels.Controls.Add(Label_Channel_2_Value, 1, 1);
-            TableLayoutPanel_Channels.Controls.Add(Label_Channel_3_Value, 2, 1);
+            TableLayoutPanel_Channels.Controls.Add(TextBox_Channel_1_Value, 0, 1);
             TableLayoutPanel_Channels.Dock = DockStyle.Fill;
             TableLayoutPanel_Channels.Location = new Point(3, 3);
             TableLayoutPanel_Channels.Name = "TableLayoutPanel_Channels";
@@ -87,16 +87,41 @@
             TableLayoutPanel_Channels.Size = new Size(394, 444);
             TableLayoutPanel_Channels.TabIndex = 0;
             // 
-            // Label_Channel_4_Value
+            // TextBox_Channel_4_Value
             // 
-            Label_Channel_4_Value.Anchor = AnchorStyles.None;
-            Label_Channel_4_Value.AutoSize = true;
-            Label_Channel_4_Value.Location = new Point(335, 424);
-            Label_Channel_4_Value.Name = "Label_Channel_4_Value";
-            Label_Channel_4_Value.Size = new Size(17, 20);
-            Label_Channel_4_Value.TabIndex = 7;
-            Label_Channel_4_Value.Text = "0";
-            Label_Channel_4_Value.TextAlign = ContentAlignment.MiddleCenter;
+            TextBox_Channel_4_Value.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TextBox_Channel_4_Value.Location = new Point(297, 414);
+            TextBox_Channel_4_Value.MaxLength = 3;
+            TextBox_Channel_4_Value.Name = "TextBox_Channel_4_Value";
+            TextBox_Channel_4_Value.Size = new Size(94, 27);
+            TextBox_Channel_4_Value.TabIndex = 11;
+            TextBox_Channel_4_Value.Text = "0";
+            TextBox_Channel_4_Value.TextAlign = HorizontalAlignment.Center;
+            TextBox_Channel_4_Value.TextChanged += TextBox_Channel_4_Value_TextChanged;
+            // 
+            // TextBox_Channel_3_Value
+            // 
+            TextBox_Channel_3_Value.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TextBox_Channel_3_Value.Location = new Point(199, 414);
+            TextBox_Channel_3_Value.MaxLength = 3;
+            TextBox_Channel_3_Value.Name = "TextBox_Channel_3_Value";
+            TextBox_Channel_3_Value.Size = new Size(92, 27);
+            TextBox_Channel_3_Value.TabIndex = 10;
+            TextBox_Channel_3_Value.Text = "0";
+            TextBox_Channel_3_Value.TextAlign = HorizontalAlignment.Center;
+            TextBox_Channel_3_Value.TextChanged += TextBox_Channel_3_Value_TextChanged;
+            // 
+            // TextBox_Channel_2_Value
+            // 
+            TextBox_Channel_2_Value.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TextBox_Channel_2_Value.Location = new Point(101, 414);
+            TextBox_Channel_2_Value.MaxLength = 3;
+            TextBox_Channel_2_Value.Name = "TextBox_Channel_2_Value";
+            TextBox_Channel_2_Value.Size = new Size(92, 27);
+            TextBox_Channel_2_Value.TabIndex = 9;
+            TextBox_Channel_2_Value.Text = "0";
+            TextBox_Channel_2_Value.TextAlign = HorizontalAlignment.Center;
+            TextBox_Channel_2_Value.TextChanged += TextBox_Channel_2_Value_TextChanged;
             // 
             // TrackBar_Channel_4
             // 
@@ -107,7 +132,7 @@
             TrackBar_Channel_4.Maximum = 255;
             TrackBar_Channel_4.Name = "TrackBar_Channel_4";
             TrackBar_Channel_4.Orientation = Orientation.Vertical;
-            TrackBar_Channel_4.Size = new Size(56, 418);
+            TrackBar_Channel_4.Size = new Size(56, 405);
             TrackBar_Channel_4.TabIndex = 6;
             TrackBar_Channel_4.ValueChanged += TrackBar_Channel_4_ValueChanged;
             // 
@@ -120,7 +145,7 @@
             TrackBar_Channel_3.Maximum = 255;
             TrackBar_Channel_3.Name = "TrackBar_Channel_3";
             TrackBar_Channel_3.Orientation = Orientation.Vertical;
-            TrackBar_Channel_3.Size = new Size(56, 418);
+            TrackBar_Channel_3.Size = new Size(56, 405);
             TrackBar_Channel_3.TabIndex = 5;
             TrackBar_Channel_3.ValueChanged += TrackBar_Channel_3_ValueChanged;
             // 
@@ -133,7 +158,7 @@
             TrackBar_Channel_2.Maximum = 255;
             TrackBar_Channel_2.Name = "TrackBar_Channel_2";
             TrackBar_Channel_2.Orientation = Orientation.Vertical;
-            TrackBar_Channel_2.Size = new Size(56, 418);
+            TrackBar_Channel_2.Size = new Size(56, 405);
             TrackBar_Channel_2.TabIndex = 2;
             TrackBar_Channel_2.ValueChanged += TrackBar_Channel_2_ValueChanged;
             // 
@@ -146,42 +171,21 @@
             TrackBar_Channel_1.Maximum = 255;
             TrackBar_Channel_1.Name = "TrackBar_Channel_1";
             TrackBar_Channel_1.Orientation = Orientation.Vertical;
-            TrackBar_Channel_1.Size = new Size(56, 418);
+            TrackBar_Channel_1.Size = new Size(56, 405);
             TrackBar_Channel_1.TabIndex = 0;
             TrackBar_Channel_1.ValueChanged += TrackBar_Channel_1_ValueChanged;
             // 
-            // Label_Channel_1_Value
+            // TextBox_Channel_1_Value
             // 
-            Label_Channel_1_Value.Anchor = AnchorStyles.None;
-            Label_Channel_1_Value.AutoSize = true;
-            Label_Channel_1_Value.Location = new Point(40, 424);
-            Label_Channel_1_Value.Name = "Label_Channel_1_Value";
-            Label_Channel_1_Value.Size = new Size(17, 20);
-            Label_Channel_1_Value.TabIndex = 1;
-            Label_Channel_1_Value.Text = "0";
-            Label_Channel_1_Value.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Label_Channel_2_Value
-            // 
-            Label_Channel_2_Value.Anchor = AnchorStyles.None;
-            Label_Channel_2_Value.AutoSize = true;
-            Label_Channel_2_Value.Location = new Point(138, 424);
-            Label_Channel_2_Value.Name = "Label_Channel_2_Value";
-            Label_Channel_2_Value.Size = new Size(17, 20);
-            Label_Channel_2_Value.TabIndex = 3;
-            Label_Channel_2_Value.Text = "0";
-            Label_Channel_2_Value.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Label_Channel_3_Value
-            // 
-            Label_Channel_3_Value.Anchor = AnchorStyles.None;
-            Label_Channel_3_Value.AutoSize = true;
-            Label_Channel_3_Value.Location = new Point(236, 424);
-            Label_Channel_3_Value.Name = "Label_Channel_3_Value";
-            Label_Channel_3_Value.Size = new Size(17, 20);
-            Label_Channel_3_Value.TabIndex = 4;
-            Label_Channel_3_Value.Text = "0";
-            Label_Channel_3_Value.TextAlign = ContentAlignment.MiddleCenter;
+            TextBox_Channel_1_Value.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TextBox_Channel_1_Value.Location = new Point(3, 414);
+            TextBox_Channel_1_Value.MaxLength = 3;
+            TextBox_Channel_1_Value.Name = "TextBox_Channel_1_Value";
+            TextBox_Channel_1_Value.Size = new Size(92, 27);
+            TextBox_Channel_1_Value.TabIndex = 8;
+            TextBox_Channel_1_Value.Text = "0";
+            TextBox_Channel_1_Value.TextAlign = HorizontalAlignment.Center;
+            TextBox_Channel_1_Value.TextChanged += TextBox_Channel_1_Value_TextChanged;
             // 
             // Panel_ColorVisualization
             // 
@@ -221,15 +225,15 @@
 
         private TableLayoutPanel TableLayoutPanel_Channels;
         private TrackBar TrackBar_Channel_1;
-        private Label Label_Channel_1_Value;
         private TrackBar TrackBar_Channel_2;
-        private Label Label_Channel_2_Value;
         private TrackBar TrackBar_Channel_3;
-        private Label Label_Channel_3_Value;
 
 
         private Panel Panel_ColorVisualization;
         private TrackBar TrackBar_Channel_4;
-        private Label Label_Channel_4_Value;
+        private TextBox TextBox_Channel_1_Value;
+        private TextBox TextBox_Channel_4_Value;
+        private TextBox TextBox_Channel_3_Value;
+        private TextBox TextBox_Channel_2_Value;
     }
 }

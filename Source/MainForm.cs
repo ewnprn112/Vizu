@@ -17,10 +17,10 @@ namespace Vizu
             TrackBar_Channel_3.Value = ActualColor.B;
             TrackBar_Channel_4.Value = ActualColor.A;
 
-            //Label_Channel_1_Value.Text = ActualColor.R.ToString();
-            //Label_Channel_2_Value.Text = ActualColor.G.ToString();
-            //Label_Channel_3_Value.Text = ActualColor.B.ToString();
-            //Label_Channel_4_Value.Text = ActualColor.A.ToString();
+            //TextBox_Channel_1_Value.Text = ActualColor.R.ToString();
+            //TextBox_Channel_2_Value.Text = ActualColor.G.ToString();
+            //TextBox_Channel_3_Value.Text = ActualColor.B.ToString();
+            //TextBox_Channel_4_Value.Text = ActualColor.A.ToString();
 
             Panel_ColorVisualization.Paint += Panel_ColorVisualization_Paint;
             //Sync_Panel_ColorVisualization_BackColor_With_ActualColor();
@@ -40,41 +40,81 @@ namespace Vizu
         private void TrackBar_Channel_1_ValueChanged(object sender, EventArgs e)
         {
             var Channel_Value = TrackBar_Channel_1.Value;
-
             ActualColor.R = Channel_Value;
-            Label_Channel_1_Value.Text = Channel_Value.ToString();
-
+            TextBox_Channel_1_Value.Text = Channel_Value.ToString();
             Sync_Panel_ColorVisualization_BackColor_With_ActualColor();
         }
 
         private void TrackBar_Channel_2_ValueChanged(object sender, EventArgs e)
         {
             var Channel_Value = TrackBar_Channel_2.Value;
-
             ActualColor.G = Channel_Value;
-            Label_Channel_2_Value.Text = Channel_Value.ToString();
-
+            TextBox_Channel_2_Value.Text = Channel_Value.ToString();
             Sync_Panel_ColorVisualization_BackColor_With_ActualColor();
         }
 
         private void TrackBar_Channel_3_ValueChanged(object sender, EventArgs e)
         {
             var Channel_Value = TrackBar_Channel_3.Value;
-
             ActualColor.B = Channel_Value;
-            Label_Channel_3_Value.Text = Channel_Value.ToString();
-
+            TextBox_Channel_3_Value.Text = Channel_Value.ToString();
             Sync_Panel_ColorVisualization_BackColor_With_ActualColor();
         }
 
         private void TrackBar_Channel_4_ValueChanged(object sender, EventArgs e)
         {
             var Channel_Value = TrackBar_Channel_4.Value;
-
             ActualColor.A = Channel_Value;
-            Label_Channel_4_Value.Text = Channel_Value.ToString();
-
+            TextBox_Channel_4_Value.Text = Channel_Value.ToString();
             Sync_Panel_ColorVisualization_BackColor_With_ActualColor();
+        }
+
+        private void TextBox_Channel_1_Value_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(TextBox_Channel_1_Value.Text, out int ConvertedValue)) {
+                TextBox_Channel_1_Value.BackColor = SystemColors.Control;
+                ConvertedValue = Math.Clamp(ConvertedValue, 0, 255);
+                TrackBar_Channel_1.Value = ConvertedValue;
+                TextBox_Channel_1_Value.Text = ConvertedValue.ToString();
+            } else {
+                TextBox_Channel_1_Value.BackColor = Color.Red;
+            }
+        }
+
+        private void TextBox_Channel_2_Value_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(TextBox_Channel_2_Value.Text, out int ConvertedValue)) {
+                TextBox_Channel_2_Value.BackColor = SystemColors.Control;
+                ConvertedValue = Math.Clamp(ConvertedValue, 0, 255);
+                TrackBar_Channel_2.Value = ConvertedValue;
+                TextBox_Channel_2_Value.Text = ConvertedValue.ToString();
+            } else {
+                TextBox_Channel_2_Value.BackColor = Color.Red;
+            }
+        }
+
+        private void TextBox_Channel_3_Value_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(TextBox_Channel_3_Value.Text, out int ConvertedValue)) {
+                TextBox_Channel_3_Value.BackColor = SystemColors.Control;
+                ConvertedValue = Math.Clamp(ConvertedValue, 0, 255);
+                TrackBar_Channel_3.Value = ConvertedValue;
+                TextBox_Channel_3_Value.Text = ConvertedValue.ToString();
+            } else {
+                TextBox_Channel_3_Value.BackColor = Color.Red;
+            }
+        }
+
+        private void TextBox_Channel_4_Value_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(TextBox_Channel_4_Value.Text, out int ConvertedValue)) {
+                TextBox_Channel_4_Value.BackColor = SystemColors.Control;
+                ConvertedValue = Math.Clamp(ConvertedValue, 0, 255);
+                TrackBar_Channel_4.Value = ConvertedValue;
+                TextBox_Channel_4_Value.Text = ConvertedValue.ToString();
+            } else {
+                TextBox_Channel_4_Value.BackColor = Color.Red;
+            }
         }
     }
 }
